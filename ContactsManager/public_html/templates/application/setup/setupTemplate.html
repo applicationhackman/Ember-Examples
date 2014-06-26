@@ -1,0 +1,31 @@
+
+<div class="org-setup-main">
+    
+    <div class="setup-title">
+        
+         {{#each model.header}}
+                {{this.title}}
+                {{#each this.operations}}
+                            
+                        <span class='setup-operations' {{action assaignee this.field}}>
+                            {{this.field.title}}
+                            
+                        </span>
+                {{/each}}
+        {{/each}}
+        
+    </div>
+    
+    <div class="setup-main">
+        
+        {{view App.SetupView.DummyView}}
+        
+    </div>
+    
+</div>
+   
+
+    
+    
+    
+    

@@ -1,0 +1,44 @@
+
+<div class="contactslist">
+    
+    {{#each model}}
+        <div class='contactCard'>
+            <div class='contactSelector'></div>
+            <div class="contactInfo">
+                <div>
+                    <div class='contactInfoRow contactTitle'>
+                        <div class='contactValue'>{{this.firstname}} {{this.lastname}}</div>
+                    </div>
+                     <div class='contactInfoRow contactNo'>
+                        <div class='contactValue'>{{this.contactno}}</div>
+                    </div>
+                     <div class='contactInfoRow contactMail'>
+                        <div class='contactValue'>{{this.mailid}}</div>
+                    </div>
+                     <div class='contactInfoRow'>
+                        <div class='contactValue'>{{this.address}}</div>
+                    </div>
+
+                </div>
+
+            </div>
+             <div class='contactPhoto'>
+
+
+             </div>
+            <div class='contactWidgets'>
+                <div class='widgetBox taskWidget'>
+                    Task
+                </div>
+                <div class='widgetBox notesWidget'>
+                    Notes
+                </div>
+                <div class='widgetBox similarWidget'>
+                    More
+                </div>
+             </div>
+
+        </div>
+    {{/each}}
+    
+</div>

@@ -1,0 +1,132 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px; }
+
+.header {
+  height: 40px;
+  width: 100%;
+  border-bottom: 1px solid #41A9E4;
+  background: #66B1DD;
+  color: #fff; }
+
+.headerRightNavigations {
+  display: flex;
+  float: right;
+  margin-right: 14px;
+  top: 8%;
+  position: relative; }
+
+.headerLeftNavigations {
+  display: flex;
+  float: left;
+  margin-right: 14px;
+  line-height: 40px;
+  position: relative; }
+
+.navItem {
+  padding-left: 8px;
+  padding-right: 8px;
+  cursor: pointer; }
+
+.actionItem {
+  position: relative;
+  background: #39DBAC;
+  padding: 6px;
+  margin-right: 8px;
+  border: 1px solid #4BBB34;
+  height: 20px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: black;
+  width: 64px;
+  text-align: center;
+  cursor: pointer;
+  line-height: 20px;
+  font-weight: bold;
+  letter-spacing: 1px; }
+
+.subAppTitle {
+  font-size: 24px; }
+
+.contactslist {
+  height: 100%;
+  width: 44%;
+  border-right: 1px solid #98B2C0;
+  padding-top: 10px; }
+
+.contactsMain, .contactsListMain {
+  height: 100%; }
+
+.contactCard {
+  height: 120px;
+  border: 1px solid #eaeaea;
+  margin-left: 10px;
+  margin-right: 10px;
+  background: #EEEEEE;
+  border-radius: 4px;
+  padding-top: 8px;
+  margin-bottom: 13px;
+  display: flex; }
+
+.contactLabel {
+  width: 22%; }
+
+.contactValue {
+  margin-left: 1%; }
+
+.contactInfoRow {
+  display: flex;
+  width: 100%;
+  margin-bottom: 8px;
+  padding-left: 10px; }
+
+.contactInfo {
+  width: 68%;
+  font-family: Garamond; }
+
+.contactTitle {
+  font-size: 24px; }
+
+.contactNo {
+  font-size: 20px; }
+
+.contactMail {
+  font-size: 19px; }
+
+.contactAddress {
+  font-size: 18px; }
+
+.contactPhoto {
+  width: 120px;
+  border: 1px solid white;
+  height: 90%; }
+
+.contactWidgets {
+  width: 10%;
+  margin-left: 10px;
+  float: right; }
+
+.widgetBox {
+  position: relative;
+  height: 32px;
+  line-height: 34px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 8px;
+  margin-right: 4px;
+  cursor: pointer; }
+
+.taskWidget {
+  background: #DFCEB7; }
+
+.notesWidget {
+  background: #A0B3BE; }
+
+.similarWidget {
+  background: #90B9A4; }
+
+.contactSelector {
+  width: 2px;
+  border: 1px solid orange;
+  background: orange; }

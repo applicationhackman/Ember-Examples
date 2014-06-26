@@ -1,0 +1,20 @@
+//$Id$
+/* 
+    Created on : 12 Jun, 2014, 5:10:33 PM
+    Author     : chandra-1263
+*/
+
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+
+div{
+    background: $primary-color;
+}
+
+
+
