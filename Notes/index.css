@@ -1,0 +1,138 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27 May, 2014, 4:24:29 PM
+    Author     : chandra-1263
+*/
+html, body{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.appView{
+    height : 100%; 
+}
+
+
+.topbar{
+    width: 100%;
+    border-bottom: 1px solid rgb(211, 211, 211);
+    display: inline-flex;
+    background: rgb(252,247,207); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(252,247,207,1) 0%, rgba(239,232,184,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,247,207,1)), color-stop(100%,rgba(239,232,184,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(252,247,207,1) 0%,rgba(239,232,184,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(252,247,207,1) 0%,rgba(239,232,184,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(252,247,207,1) 0%,rgba(239,232,184,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(252,247,207,1) 0%,rgba(239,232,184,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcf7cf', endColorstr='#efe8b8',GradientType=0 ); /* IE6-9 */
+    background-repeat: no-repeat;
+}
+
+.actionBox{
+    width: 30px;
+    height:  inherit;
+    border-right : 1px solid #bebebe;
+}
+
+.tabsNavigationBar{
+    display: flex;
+}
+
+.actBtn{
+    background: #6bd4ee;
+    border:none;
+    height: 38px;
+    width: inherit;
+    font-size: 20px;
+    margin: 0px;
+    cursor: pointer;
+    text-align: center;
+    border-left: 1px solid rgb(211, 211, 211);
+    border-right: 1px solid rgb(211, 211, 211);
+    line-height: 38px;
+}
+
+.noteTab{
+    
+    width: 80px;
+    border-style: solid;
+    border-color: rgb(211, 211, 211);
+    border-width: 0px;
+    border-left-width: 1px;
+    position: relative;
+    display: flex;
+    position: relative;
+    padding-top: 8px;
+    
+}
+
+.noteTitle{
+    width: 74%;
+    height: 24px;
+    position: relative;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    line-height: 20px;
+    overflow: hidden;
+    margin-top: 2px;
+    padding-left: 4px;
+}
+
+.noteActions{
+    font-family: Arial;
+    font-weight: bold;
+    color: #cc0000;
+}
+
+.noteClose{
+   text-align: center;
+    margin-left: 0px;
+    margin-top: 4px;
+    font-size: 10px;
+    line-height: 16px;
+    border-radius: 15px;
+    height: 14px;
+    width: 14px;
+    color: #ff6600;
+    cursor: pointer;
+}
+.noteClose:hover{
+    zoom: 1.1;
+}
+
+
+/* Note Editor */
+
+
+.noteEditorOuter{
+    width: 100%;
+    height: 94%;
+    position: relative;
+}
+
+.layer{
+    margin-top: 2px;
+    margin-left: 2px;
+}
+
+.noteEditor{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: none;
+    font-size: 14px;
+    background: rgb(253, 251, 247);
+}
+
+.noteEditor:focus {
+    outline: 0px;
+}
+
+.activeTab {
+    background: #ffcc33;
+}

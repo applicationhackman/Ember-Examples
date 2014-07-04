@@ -13,6 +13,7 @@
                                 'firstname'   : 'CSK',
                                 'lastname'   : '88',
                                 'contactno'  :  9767868183,
+                                'mailid'      : 'csk@gmail.com',
                                 'address'     : 'No:18, SSK'   
                                 
                             },
@@ -21,6 +22,7 @@
                                 'firstname'   : 'poke',
                                 'lastname'   : '88',
                                 'contactno'  :  9767868183,
+                                'mailid'      : 'csk@gmail.com',
                                 'address'     : 'No:18, SSK'   
                                 
                             },
@@ -29,6 +31,7 @@
                                 'firstname'   : 'yak',
                                 'lastname'   : '88',
                                 'contactno'  :  9767868183,
+                                'mailid'      : 'csk@gmail.com',
                                 'address'     : 'No:18, SSK'   
                                 
                             },
@@ -37,6 +40,7 @@
                                 'firstname'   : 'hack',
                                 'lastname'   : '88',
                                 'contactno'  :  9767868183,
+                                'mailid'      : 'csk@gmail.com',
                                 'address'     : 'No:18, SSK'   
                                 
                             }

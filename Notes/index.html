@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title> Notes </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="index.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <script type="text/x-handlebars">
+            
+            <div class="topbar">
+                
+         
+                
+                    {{#each model}}
+                        {{#view App.TabView}}
+                            <div class="noteTab" {{action "showNote" id}}>
+                                <div class="noteTitle"> 
+                                    {{#if note.length}} {{firstLine note}} {{/if}} {{trim note}}
+                                 </div>
+                                <div class="noteActions">
+                                    <div class="noteClose" {{action "deleteNote" this id}}>X</div>
+                                </div>
+                            </div>
+                        {{/view}}
+                    {{/each}}
+                <div class="actionBox">
+                    <div class="actBtn" type="button" {{action 'createNote'}}>+</div>
+                 </div>
+                        
+            </div>
+            {{outlet}}
+        </script>
+        
+        
+        <script type="text/x-handlebars" id="note">
+            <div class="noteEditorOuter layer"  {{action 'updateNote' this}}>
+                <div class='noteEditor'>
+                    {{view Em.TextArea valueBinding='model.note'  class='noteEditor' placeholder="Endter your note" autofocus=''}}
+                </div>
+            </div>
+        </script>
+
+        
+        
+        
+    </body>
+    <script src="http://chandra-1263:81/thirdparty/js/jquery.js"></script>
+    <script src="http://chandra-1263:81/thirdparty/js/handlebars.js"></script>
+    <script src="http://chandra-1263:81/thirdparty/js/ember.js"></script>
+    <script src="http://chandra-1263:81/thirdparty/js/ember-data.js"></script>
+    <script src="http://chandra-1263:81/thirdparty/js/ember-data-localstorage.js"></script>
+    
+  
+    <script src="app.js"></script>
+    <script src="route/route.js"></script>
+    <script src="route/note.js"></script>
+    <script src="route/notes.js"></script>
+    <script src="model/notes.js"></script>
+    <script src="controller/notes.js"></script>
+    <script src="controller/note.js"></script>
+    <script src="view/app.js"></script>
+    <script src="view/tab.js"></script>
+    
+    
+    
+    
+    
+    
+</html>
