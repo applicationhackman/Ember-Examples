@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    
+    <head>
+        <title> LOG_STACKTRACE_ON_DEPRECATION </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+        <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+        <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+        <style>
+            .keysValues{
+                padding-left: 18px;
+                padding-top: 8px;
+                
+            }
+            #routeDetails{
+                display: flex;
+                margin: 18px; 
+                border: 1px solid #cccccc;
+                padding-bottom: 12px;
+                
+            }
+            
+            .actionComp{
+                outline: none;
+                
+            }
+            .details{
+                border: 1px solid;
+                margin-bottom: 8px;
+            }
+            .actionComp{
+                background: aliceblue;
+                border: 1px solid;
+                box-shadow: 2px;
+                box-shadow: 0px 1px 4px 0px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <b> LOG_STACKTRACE_ON_DEPRECATION </b> is an option to that determines and logs the traces of deprecations . <br> 
+        
+        <script type="text/x-handlebars">
+             <div style="border: 1px solid;padding: 4px; margin: 10px;width: 250px;" {{action navigateTo}}>
+                    About me
+            </div>
+    
+            <div id='currRouteDeatils' class='details'>
+             <div> 
+               <div><b>Application details from the controllers </b></div>
+                    <div>
+                        <button class='actionComp' {{action getCurrentRouteName}}>
+                            Get the current route details
+                        </button>
+                        <span> Getting the current route details using <b>needs</b> in controller </span>
+                    </div>
+                </div>
+                <div id='routeDetails'>
+                    <div class='keys' id='routeKeys'>
+                    </div>
+                    <div calss='values' id='routeValues'>
+                    </div>
+
+                </div>
+            </div>
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" id="about">
+            <b>About me </b>
+            </br>
+                This chandru from chennai working as webdeveloper and learning emberjs.
+        </script>
+        
+    </body>
+    
+    <script>
+        
+        var App  = Em.Application.create({
+                 
+         });
+         
+         App.Router.map(function(){
+                        this.resource
+                        (
+                            "about",
+                            {path:"/about"},
+                            function(){}
+                        ); 
+                    
+            
+        });    
+         
+         
+        App.ApplicationController   = Em.Controller.extend({
+                needs               :   ['application'],
+                actions             :   {
+                        navigateTo  :   function() {
+                                
+                                this.transitionToRoute('about');
+                                
+                        },
+                        getCurrentRouteName     :   function() {
+                                    for(var j in this){
+                                        if(typeof this[j] === 'string'){
+                                            jQuery('<div>',{
+                                                html:j,
+                                                class:'keysValues'
+                                            }).appendTo('#routeKeys');
+                                            
+                                          
+                                            
+                                            jQuery('<div>',{
+                                                html:" :   "+this[j],
+                                                class:'keysValues'
+                                            }).appendTo('#routeValues');
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                        }
+                }
+        }); 
+    </script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    
+    <head>
+        <title> Way to render Template : renderTemplate </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+        <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+        <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+       
+    </head>
+    
+    <body>
+        <script type="text/x-handlebars">
+                Render template application page 
+                <br>
+                {{#link-to 'contact'}}
+                    Contact
+                {{/link-to}}
+                     <br>   
+                {{#link-to 'about'}}
+                    About
+                {{/link-to}}
+                        {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" id="contact">
+                    <br><br>
+                        Contact resource main route is here 
+        </script>
+        
+        <script type="text/x-handlebars" id="about">
+                    <br><br>
+                    About is here 
+                    {{outlet aboutDetails}}
+        </script>
+        
+        <script type="text/x-handlebars" id="ContactMore">
+                                <div style='border:1px solid;'>I am contact more template rendering inside the Contact Template </div>
+                        
+        </script>
+        
+        <script type="text/x-handlebars" id="aboutDetails">
+                            <br><br>
+                            <div>This is an about Details template inside about template</div>
+                            
+        </script>
+    </body>
+    
+    <script>
+        
+        var App  = Em.Application.create({
+                 
+         });
+         
+         App.Router.map(function(){
+                        this.resource
+                        (
+                            "contact",
+                            {path:"/contact"},
+                            function(){}
+                        ); 
+                        this.route
+                        (   
+                                'about',
+                                {path:'/about'}
+                        );
+                       
+        });
+        
+        
+        App.ContactRoute    = Em.Route.extend({
+                              renderTemplate    :   function() {
+                                  this._super();
+                                  this.render();
+                               }
+        });
+        
+        App.AboutRoute    = Em.Route.extend({
+                              renderTemplate    :   function(a, b) {
+                                  this.render();
+                                  this.render('aboutDetails',{outlet:'aboutDetails',into:'about'});
+                               }
+        });
+        
+         
+         
+    </script>
+</html>

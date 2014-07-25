@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <title>
+            Way to render template - render in Route
+        </title>
+        <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+        <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+        <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+        <style>
+            a{
+                display: block;
+            }
+            .tab{
+                border:1px solid black;
+                width: 100px;
+                height: 100px;
+                padding: 8px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <script type="text/x-handlebars">
+            Application 
+            
+            {{#link-to 'doors' 1}}
+                Door One
+            {{/link-to}}
+                    
+            {{#link-to 'tabs' 1}}
+            Tab One
+            {{/link-to}}
+                    
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars"  id='tabs'>
+            Tabs Main Route 
+            
+            {{outlet}}
+            
+        </script>
+        
+         <script type="text/x-handlebars"  id='tabs/index'>
+                    
+                    <div class='tab'>
+                        Individual tab index content here 
+                    </div>
+            
+        </script>
+        
+        
+        <script type="text/x-handlebars" id="doors">
+                                    <br>
+            <div>
+                Doors here CSK
+            </div>
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" id="doors/index">
+                            
+            <div>
+            Door number <b>{{model.id}}</b>
+            </div>
+    
+        </script>
+        
+        <script type="text/x-handlebars" id="temp">
+                            Temporary
+        </script>
+    </body>
+    <script>
+        
+        var App  = Em.Application.create({
+                   
+       });
+       
+       
+       App.Router.map(function(){
+                         
+                        this.resource
+                        (
+                            "tabs",
+                            {path:"/tabs/:id"},
+                            function(){}
+                        ); 
+                
+                        this.resource
+                        (
+                            "doors",
+                            {path:"/doors/:id"},
+                            function(){}
+                        ); 
+           });
+       
+        
+           
+        App.TabsView  = Em.View.extend({
+                    render  :   function(buffer) {
+                        buffer.buffer = buffer.buffer+"<br> <div> This content appendant to TabsView </div> <br> ";
+                        this._super(buffer);
+                    }
+        });   
+        
+        
+        
+        
+        
+        App.DoorsRoute   = Em.Route.extend({
+                            model   :   function(a,b) {
+                                return {g:'good',d:'do','id':a.id};
+                            },
+                            renderTemplate : function(buffer) {
+                                console.log(this," renderTemplate mehtod calling from route",buffer);
+                                this.render();
+                            },
+                            render    :   function(buffer) {
+                                    this._super(buffer);
+                            }
+        });
+
+       
+    </script>
+</html>

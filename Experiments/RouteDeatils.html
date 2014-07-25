@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    
+    <head>
+        <title>  </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+        <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+        <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+        <style>
+            .keysValues{
+                padding-left: 18px;
+                padding-top: 8px;
+                
+            }
+            #routeDetails{
+                display: flex;
+                margin: 18px; 
+                border: 1px solid #cccccc;
+                padding-bottom: 12px;
+                
+            }
+            
+            .actionComp{
+                outline: none;
+                
+            }
+            .details{
+                border: 1px solid;
+                margin-bottom: 8px;
+            }
+            .actionComp{
+                background: aliceblue;
+                border: 1px solid;
+                box-shadow: 2px;
+                box-shadow: 0px 1px 4px 0px;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <script type="text/x-handlebars">
+            
+        </script>
+        
+       
+        
+    </body>
+    
+    <script>
+        
+        var App  = Em.Application.create({
+                 
+         });
+         
+       
+         App.ApplicationRoute    =  Em.Route.extend({
+             
+                                   model: function() {
+                                       curr = this;
+                                       setTimeout(function() {
+//                                           console.log(curr.getProperties('controller').controller," App mod ",this);
+                                        }.bind(this));
+                                        
+                                        
+                                   }
+         });
+         
+         
+    </script>
+</html>

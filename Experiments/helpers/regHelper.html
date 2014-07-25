@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+    <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+    <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+  </head>
+  <body>
+      
+      <script type="text/x-handlebars">
+          Aplication runs here render HTML String here ({{model.content}})
+          <div>{{renderHTML model.content}}</div>
+      </script>
+      
+  </body>
+  <script>
+      var App    = Em.Application.create({
+      });
+      
+      App.ApplicationRoute  = Em.Route.extend({
+                                model: function() {
+                                    return {'content':'<div>CSK do Good</div>','title':"Very Good Appearance"}
+                                }
+     });
+      
+      
+      Handlebars.registerHelper('renderHTML',function(ctx) {
+          console.log("ctx is here ",ctx);
+       });
+      
+      
+      
+      
+  </script>
+</html>

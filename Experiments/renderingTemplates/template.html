@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Rendering template - template</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+    <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+    <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+  </head>
+  <style>
+      a{
+          display: block;
+      }
+  </style>
+  <body>
+      <script type="text/x-handlebars">
+          Application View
+          
+          {{#link-to 'ways'}}
+            Go to the ways
+          {{/link-to}}
+         {{outlet}}
+      </script>
+      
+  </body>
+  
+  <script>
+      var App  = Em.Application.create({
+      });
+      
+      App.Router.map(function(){
+                        this.resource
+                        (
+                            "ways",
+                            {path:"/ways"},
+                            function(){}
+                        ); 
+            
+        });
+        
+        App.WaysView  = Em.View.extend({
+            template: Ember.Handlebars.compile("<div style='border:1px solid;margin-top:8px;'> Here ways </div>")
+        });
+      
+      
+  </script>
+</html>

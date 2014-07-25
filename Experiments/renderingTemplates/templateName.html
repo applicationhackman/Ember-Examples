@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://localhost:81/thirdparty/js/jquery/jquery.js"></script>
+    <script src="http://localhost:81/thirdparty/js/handlebars.js"></script>
+    <script src="http://localhost:81/thirdparty/js/ember.js"></script>
+  </head>
+  <body>
+      <script type="text/x-handlebars">
+          Application View
+          
+    {{#link-to 'test'}}
+        Link to TestView
+    {{/link-to}}
+            {{outlet}}
+            
+      </script>
+      <script type="text/x-handlebars" id="test">
+                  <br>
+                  <div>Test View good</div>
+      </script>
+      
+       <script type="text/x-handlebars" id="newtest">
+                  <br>
+                  <div>Alternative to the test view</div>
+      </script>
+      
+  </body>
+  <script>
+      var App  = Em.Application.create({
+  
+       });
+       App.Router.map(function(){
+                        this.resource
+                        (
+                            "test",
+                            {path:"/test"},
+                            function(){}
+                        ) 
+                       
+            
+        });
+       
+       App.ApplicationView   = Em.View.extend({
+            
+        });
+        
+        App.TestView   = Em.View.extend({
+            templateName : "newtest"
+        });
+       
+       
+       
+
+  </script>
+</html>
