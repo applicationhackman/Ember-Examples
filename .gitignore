@@ -1,1 +1,4 @@
 /ContactsManager/nbproject/private/
+*.xml
+
+*.properties
