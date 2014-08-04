@@ -1,0 +1,603 @@
+/* 
+    Created on : 15 Jul, 2014, 7:31:40 AM
+    Author     : chandra-1263
+*/
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: -0.8px;
+  font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  -webkit-font-smoothing: antialiased;
+  word-wrap: break-word; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+article > .p1 {
+  margin-bottom: 12px; }
+
+p, blockquote {
+  margin-bottom: 24px;
+  line-height: 180%; }
+
+.applicationView {
+  display: flex;
+  flex-direction: column; }
+
+.applicationView, .blogView, .postListParent, .PostCardsContainer {
+  height: 100%;
+  overflow: hidden; }
+
+.blogView {
+  /*display: flex;*/ }
+
+.transall {
+  transition-delay: 0s;
+  transition-duration: 120ms;
+  transition-property: all;
+  transition-timing-function: ease, step-start, cubic-bezier(0.1, 0.7, 1, 0.1); }
+
+.postCard {
+  width: 88%;
+  min-height: 100px;
+  /*max-height: 168px;*/
+  height: 204px;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  padding-top: 8px;
+  cursor: pointer;
+  background: white;
+  transition-delay: 0s;
+  transition-duration: 120ms;
+  transition-property: all;
+  transition-timing-function: ease;
+  position: relative;
+  box-shadow: 0px 0px 1px 1px #e4e4e4;
+  margin-left: 12px; }
+
+.postTags {
+  padding: 0% 0px 0px 28px;
+  border-top: 1px solid #c0bbbb;
+  line-height: 40px;
+  margin-top: 6%; }
+
+.postCard:hover {
+  /*box-shadow: 1px 1px 2px 1px rgb(136, 136, 136);*/
+  -webkit-transform: scale(1.009); }
+
+.postCardTitleBox {
+  display: flex;
+  border-bottom: 1px solid #cccccc;
+  width: 98%;
+  line-height: 36px;
+  padding-left: 4px;
+  border-collapse: collapse;
+  background: #01CCD3;
+  font-size: 100%;
+  margin-left: -1px;
+  box-shadow: 0px 0px 1px 0px #797979;
+  margin-left: -10px;
+  opacity: 0.6;
+  font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+  font-size: 20px; }
+
+.postCardTitle {
+  font-weight: 600;
+  padding-right: 8px; }
+
+.postCardTitleBoxSpace {
+  width: 80%; }
+
+.postCardTitleBoxTag {
+  width: 5%; }
+
+.postCardContent {
+  width: 90%;
+  position: relative;
+  border-collapse: collapse;
+  border-top: 0px solid;
+  font-size: 18px;
+  height: 88px;
+  overflow: hidden;
+  padding: 3% 0px 0px 5%; }
+
+.postCardContentView {
+  width: 96%;
+  height: 98%;
+  position: relative;
+  margin-top: 4px;
+  border-collapse: collapse;
+  border-top: 0px solid;
+  font-size: 18px;
+  overflow-y: auto;
+  padding: 14px 14px 4px 40px; }
+
+.postListParent {
+  width: 100.4%;
+  display: flex;
+  background: #ECECEC; }
+
+.PostCardsContainer {
+  display: flex;
+  width: 34%; }
+
+.postCardView {
+  width: 64%;
+  min-height: 100px;
+  height: 98%;
+  margin-top: 18px;
+  border-collapse: collapse;
+  box-shadow: 1px 3px 4px 1px #dadada;
+  cursor: pointer;
+  background: white;
+  transition-delay: 0s;
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: ease;
+  margin-right: 8px;
+  z-index: 99;
+  border-radius: 4px;
+  display: flex; }
+
+.PostActions {
+  width: 40px;
+  min-width: 28px;
+  padding-top: 24px;
+  letter-spacing: 12px; }
+
+.PostAction {
+  overflow: hidden; }
+
+/*
+Blog related Styles
+*/
+.more-link {
+  display: none; }
+
+.blogNavBar {
+  display: flex;
+  box-shadow: 1px 1px 10px #BEBEBE;
+  color: white;
+  font-weight: 600;
+  padding-left: 18px; }
+
+.addPostComment {
+  bottom: 0px;
+  position: relative;
+  padding: 24px;
+  width: 83%; }
+
+.addPostComment > div {
+  padding: 8px 0px 18px 0px;
+  text-align: center; }
+
+.addPostCommentBox {
+  height: 62px;
+  padding: .2em;
+  width: 100%;
+  max-width: 27.75em;
+  background: #eeede8;
+  color: #7c7d7f;
+  outline: solid 1px #d9dcdf;
+  border: none;
+  font-family: lusitana,serif;
+  font-size: .813em;
+  line-height: 1.85;
+  border-radius: 0;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease;
+  -webkit-appearance: none; }
+
+.BlogCategory:hover {
+  color: #000000; }
+
+.BlogCategory {
+  font-size: 22px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-align: center;
+  padding: 8px;
+  border-radius: 2px;
+  color: white; }
+
+.blogMainView {
+  height: 99.8%; }
+
+.PostTitleBar {
+  /*background: $postCardTitleBoxBGClr;*/
+  font-size: 18px;
+  height: 2px; }
+
+article > p {
+  /*margin: 1.5em 0 1.5em 2.5em;*/
+  color: #535353; }
+
+.postCardContent > p {
+  margin: 4px;
+  font-size: 15px;
+  padding-top: 2px; }
+
+.PostCardsHolder {
+  width: 98%;
+  margin-left: 20px;
+  margin-top: 18px;
+  overflow: hidden;
+  overflow-x: hidden;
+  height: 100%;
+  position: relative; }
+
+.PostCardsList {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 92%;
+  padding: 5px 0px 0px 10px; }
+
+.pconnectToPView {
+  width: 100%;
+  box-shadow: 1px 3px 4px 1px #dadada;
+  z-index: 100;
+  margin-bottom: 4px; }
+
+.select-expand-post {
+  width: 99.8%;
+  box-shadow: 0px 1px 2px 2px #C7BFBF;
+  z-index: 100;
+  left: 1px;
+  margin-left: 0px;
+  padding-top: 8px; }
+
+.PostCardFooter {
+  position: relative;
+  bottom: 126px; }
+
+.PostCardHeader {
+  /*height: 8px;*/ }
+
+.select-expand-post > div > .postCardTitleBox {
+  width: 92%;
+  background: #01CCD3;
+  text-align: center;
+  margin-left: -8px;
+  border-radius: 0px 1px 1px 2px;
+  padding-left: 20px;
+  opacity: 1; }
+
+.pconnectedViewSetOne {
+  border-left: 4px solid #01CCD3; }
+
+.pconnectToPView > .postCardContent {
+  width: 99.6%;
+  visibility: hidden; }
+
+.BlogTopbar {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  display: webkit-flex;
+  background: #12a6c7;
+  background: -moz-linear-gradient(-45deg, #12a6c7 0%, #31b0cc 20%, #4eb9d4 44%, #31b0cc 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, #12a6c7), color-stop(20%, #31b0cc), color-stop(44%, #4eb9d4), color-stop(100%, #31b0cc));
+  background: -webkit-linear-gradient(-45deg, #12a6c7 0%, #31b0cc 20%, #4eb9d4 44%, #31b0cc 100%);
+  background: -o-linear-gradient(-45deg, #12a6c7 0%, #31b0cc 20%, #4eb9d4 44%, #31b0cc 100%);
+  background: -ms-linear-gradient(-45deg, #12a6c7 0%, #31b0cc 20%, #4eb9d4 44%, #31b0cc 100%);
+  background: linear-gradient(135deg, #12a6c7 0%, #31b0cc 20%, #4eb9d4 44%, #31b0cc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#12a6c7', endColorstr='#31b0cc', GradientType=1 );
+  box-shadow: 0px 0px 1px 1px #575757; }
+
+.BlogActionsBar {
+  height: 34px; }
+
+/*
+    About me
+*/
+.aboutmeContainer {
+  height: 100%;
+  width: 100%; }
+
+.aboutme {
+  height: 80%;
+  border: 0px solid;
+  margin-top: 4%;
+  margin-left: 4%; }
+
+.aboutCircle {
+  width: 32%;
+  height: 70%;
+  border: 6px solid;
+  display: inline-block;
+  border-radius: 50%;
+  padding: 50px;
+  /*top:-140%;*/
+  position: relative;
+  transition-delay: 0s;
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: ease; }
+
+.aboutCircleContent, .aboutCircleTitle {
+  text-align: center;
+  margin-top: 14px; }
+
+.aboutCircleContent {
+  font-size: 20px;
+  padding-top: 8px; }
+
+.aboutCircleTitle {
+  font-size: 50px; }
+
+.aboutContentText {
+  padding-top: 8px; }
+
+.aboutBounce {
+  top: 0%;
+  /*    -webkit-animation: abounce 1s linear 0s 3 alternate;
+       -moz-animation: abounce 1s linear 0s 3 alternate;
+         -o-animation: abounce 1s linear 0s 3 alternate;
+            animation: abounce 1s linear 0s 3 alternate;*/ }
+
+.navigationFirst {
+  width: 28%;
+  height: 88%; }
+
+.navigationMid {
+  width: 36%; }
+
+.navigationEnd {
+  width: 36%;
+  height: 88%;
+  display: flex; }
+
+.navigationToolbar {
+  height: 44px;
+  border-left: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
+  position: relative;
+  background: #04CBE4;
+  box-shadow: 5px 1px 8px 1px silver;
+  display: flex; }
+
+.indexContent {
+  width: 96%; }
+
+.navItem {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+  padding: 8px 8px 0px 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  height: 88%;
+  font-family: fantasy;
+  font-size: 24px;
+  width: 80px;
+  transition-delay: 0s;
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: ease; }
+
+.navItem:hover {
+  background: #dbdbdb; }
+
+.PostTitleBar {
+  display: none; }
+
+.reverseHView {
+  flex-direction: row-reverse; }
+
+/* comment */
+.expandShowComment {
+  background: green;
+  -webkit-transform: rotateY(-180deg);
+  position: relative; }
+
+#showComments {
+  transition-delay: 0s;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-timing-function: ease;
+  padding-left: 12px;
+  background: #03ade4;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px 0px 0px 8px; }
+
+.blog1PostComments {
+  transition-delay: 0s;
+  transition-duration: 1s;
+  transition-property: all;
+  transition-timing-function: ease;
+  margin-top: 18px;
+  border: 1px solid #b9b8b8;
+  background: white;
+  position: relative;
+  top: 4%;
+  left: -4%;
+  height: 84%;
+  box-shadow: 0px 1px 1px 1px #aca8a8;
+  width: 0%; }
+
+.actButton {
+  width: 80px;
+  height: 28px;
+  background: #05BDCC;
+  color: white;
+  border: 0px;
+  box-shadow: 0px 0px 1px 1px gray; }
+
+@-webkit-keyframes expandCommentAnim {
+  0% {
+    left: -14%;
+    width: 0%; }
+
+  40% {
+    width: 24%; }
+
+  20% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 60deg);
+    -moz-transform: rotate3d(0.1, 1, 0, 60deg);
+    transform: rotate3d(0.1, 1, 0, 60deg); }
+
+  80% {
+    left: -2%; }
+
+  100% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 0deg);
+    -moz-transform: rotate3d(0.1, 1, 0, 0deg);
+    transform: rotate3d(0.1, 1, 0, 0deg); } }
+
+@-moz-keyframes expandCommentAnim {
+  0% {
+    left: -14%;
+    width: 0%; }
+
+  40% {
+    width: 24%; }
+
+  20% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 60deg); }
+
+  80% {
+    left: -2%; }
+
+  100% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 0deg); } }
+
+@-o-keyframes expandCommentAnim {
+  0% {
+    left: -14%;
+    width: 0%; }
+
+  40% {
+    width: 24%; }
+
+  20% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 60deg); }
+
+  80% {
+    left: -2%; }
+
+  100% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 0deg); } }
+
+@keyframes expandCommentAnim {
+  0% {
+    left: -14%;
+    width: 0%; }
+
+  40% {
+    width: 24%; }
+
+  20% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 60deg); }
+
+  80% {
+    left: -2%; }
+
+  100% {
+    -webkit-transform: rotate3d(0.1, 1, 0, 0deg); } }
+
+.expand-comments {
+  box-shadow: none;
+  -webkit-animation: expandCommentAnim 2s linear 0s 1 normal;
+  -moz-animation: expandCommentAnim 1s linear 0s 1 alternate;
+  -o-animation: expandCommentAnim 1s linear 0s 1 alternate;
+  animation: expandCommentAnim 1s linear 0s 1 alternate;
+  width: 24%;
+  left: -1%; }
+
+.commentsContainer {
+  padding-left: 4%;
+  height: 56%;
+  overflow-y: scroll; }
+
+.postComment {
+  margin-top: 4px;
+  padding: 6px;
+  width: 200px;
+  min-width: 28px;
+  position: relative;
+  left: 5%;
+  border-bottom: 1px solid #ebebeb;
+  line-height: 28px; }
+
+.postCommentTitle {
+  font-size: 20px;
+  font-family: fantasy;
+  padding: 10px 0px 4px 16px;
+  font-weight: bold;
+  border-bottom: 2px solid #3b9cc2; }
+
+/* comments hides */
+@media screen and (max-width: 800px) {
+  body {
+    /*background: green;*/ }
+
+  .postListParent {
+    flex-direction: column; }
+
+  .PostCardsContainer {
+    width: 100%;
+    height: 40%; }
+
+  .postCardView {
+    overflow-y: scroll;
+    width: 94%;
+    margin-left: 14px;
+    display: flex;
+    flex-direction: column; }
+
+  .postCard {
+    width: 100%;
+    display: flex;
+    margin-bottom: 18px;
+    min-height: 40px;
+    overflow: hidden;
+    height: 40px;
+    flex-direction: column; }
+
+  .postCardContentView {
+    height: 70%;
+    margin-top: -2px;
+    padding-top: 4px; }
+
+  .pconnectedViewSetOne {
+    border-top: 4px solid #01CCD3;
+    border-left: 0px solid #01CCD3; }
+
+  .PostCardsHolder {
+    /*display: flex;*/
+    margin: 0px; }
+
+  .postCardTitleBox {
+    align-items: center;
+    font-size: 20px;
+    padding-left: 6%; }
+
+  .postCardContent {
+    display: none; }
+
+  .pconnectToPView {
+    /*display: none;*/ }
+
+  .PostTitleBar {
+    font-size: 18px;
+    height: 2px;
+    margin-top: 13px;
+    margin-bottom: 28px;
+    text-align: center;
+    display: block; }
+
+  .expand-comments {
+    width: 92%;
+    margin-left: 6%;
+    height: 35%;
+    margin-top: 0px; }
+
+  .blog1PostComments {
+    height: 0px; }
+
+  .postCardContentView {
+    width: 91%; } }

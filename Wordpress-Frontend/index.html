@@ -1,0 +1,218 @@
+    <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Creative Style Sheet Good</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/libs/jquery/jquery.min.js"></script>
+        <script src="js/libs/handlebars.js/handlebars.min.js"></script>
+        <script src="js/libs/ember.js/ember.min.js"></script>
+        <script src="js/libs/ember-data.js/ember-data.min.js"></script>
+        <link rel="stylesheet" href="decoration/index.css"/>
+    </head>
+    <body>
+          
+        <script type="text/x-handlebars">
+            
+                 <div class='navigationToolbar'>
+                        <div class='navigationFirst'>
+                            
+                        </div>
+                        <div class='navigationMid'>
+                        </div>
+                        <div class='navigationEnd'>
+                            <div class='navItem'> JS </div>
+                            <div class='navItem'> CSS </div>
+                            <div class='navItem'> HTML </div>
+                        </div>
+                 </div> 
+                 {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" id="index">
+               
+        </script>
+        
+        <script type="text/x-handlebars" id="blogs">
+            {{model}}
+        </script>
+        
+        <script type="text/x-handlebars" id="blog1">
+            {{outlet Blog1Topbar}}
+            {{outlet}}
+        </script>
+        
+        <script type="text/x-handlebars" id="Blog1Posts">
+            
+            <div class='PostCardsContainer'>
+                    
+                    <div class='PostCardsHolder'>
+                        <div class='PostCardHeader'>
+                            
+                        </div>
+                        
+                        
+                    {{#view App.BlogPostCardsListView}}
+                        
+                            {{#each content}}
+                                {{#view App.BlogPostItemView}}   
+                                    <div {{action 'gotoPost' this}}>
+
+                                        <div class="postCardTitleBox">
+                                                {{title}}
+                                         </div>                                         
+                                        <div class="postCardContent">
+
+                                            {{renderHTML excerpt}}
+
+                                        </div>  
+                                        <div class='postTags'>
+                                            {{#each terms.category}}
+                                               {{this.name}}
+                                           {{/each}}  
+                                         </div>   
+                                    </div>
+                                {{/view}}
+
+                            {{/each}}   
+                        {{/view}}
+                         <div class='PostCardFooter'>
+                            
+                        </div>       
+
+                    </div>
+            
+                </div>
+        
+                {{outlet}}
+                {{outlet postComments}}
+				{{outlet postAddComment}}
+        </script>
+        
+        
+        <script type="text/x-handlebars" id="Blog1Posts/post">
+                                        
+                <div class='PostTitleBar'>
+                {{content.title}}
+                 </div>
+
+                <div class="postCardContentView transall">
+                    <article>
+                        {{renderHTML content.content}}
+                   </article>
+                </div>
+                <div class='PostActions'>
+                    <div id='showComments' {{action 'showPostComments'}}>
+                       comments
+                    </div>
+                 </div>   
+                 
+        </script>
+        
+        <script type="text/x-handlebars" id="Blog1Topbar">
+           
+            
+        </script>
+        
+        <script type="text/x-handlebars" id="me">
+                <div class='aboutme'>
+                
+                    <div class='aboutCircle'>
+                        <div class='aboutCircleTitle'> It's Me</div>
+                        
+                        <div class='aboutCircleContent'>
+                            <div class='aboutContentText'> Chandra Sekar </div>
+                            <div class='aboutContentText'>Software engineer. </div>
+                            <div class='aboutContentText'>
+                                I love to create application with new idea.
+                            </div>
+                            <div>
+                                
+                            </div>
+                            
+                    
+                        </div>
+                    </div>
+            
+                </div>
+        </script>
+        
+        <script type="text/x-handlebars" id="blog1PostComments">
+										<div class='postCommentTitle'>
+											Comments
+										</div>		
+                                        <div class='commentsContainer'>
+                                             <div class='postComment'>
+                                                    Comment one here
+                                                </div>
+                                                <div class='postComment'>
+                                                    Comment two here 
+                                                </div>
+                                                <div class='postComment'>
+                                                    Comment two here 
+                                                </div>
+                                                <div class='postComment'>
+                                                    Comment two here 
+                                                </div>
+                                        </div>
+										<div class='addPostComment'>
+											<div>
+												Add comment	
+											</div>
+											<div>
+												<textarea class='addPostCommentBox' rows="" cols=""></textarea>
+											</div>
+											<div>												
+												<button class='actButton'>Submit</button>
+											</div>
+										</div>
+										
+        </script>
+        
+    	<script type="text/x-handlebars" id="blog1PostAddComment">
+    		
+		</script>    
+    </body>
+    
+    <script>
+        
+              
+        
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/adapters/RESTAdapter.js"></script>
+    
+    <script src="js/maps/app.js"></script>
+    
+    
+    <script src="js/helpers/renderHTML.js"></script>
+    <script src="js/commands/blog/postsController.js"></script>
+    
+    
+    <script src="js/routes/blogs.js"></script>
+    <script src="js/routes/blog/main.js"></script>
+    <script src="js/routes/blog/posts.js"></script>
+    <script src="js/routes/blog/post.js"></script>
+    
+    <script src="js/routes/me/me.js"></script>
+    
+    
+    
+    
+    
+    
+    <script src="js/views/application.js"></script>
+    
+    <script src="js/views/me/me.js"></script>
+    
+    <script src="js/views/blog/main.js"></script>
+    <script src="js/views/blog/postsList.js"></script>
+    <script src="js/views/blog/postView.js"></script>
+    
+    
+</html>
